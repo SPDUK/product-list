@@ -1,0 +1,17 @@
+.container {
+  background: #fff;
+  width: 100%;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 20%;
+  }
+}

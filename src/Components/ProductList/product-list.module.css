@@ -1,0 +1,6 @@
+.list {
+  background: blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
