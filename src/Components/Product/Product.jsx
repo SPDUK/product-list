@@ -33,7 +33,6 @@ import {
 export default function Product(props) {
   const {
     available,
-    description,
     imageUrl,
     lowOnStock,
     name,
@@ -97,7 +96,6 @@ export default function Product(props) {
 
 Product.propTypes = {
   available: PropTypes.string,
-  description: PropTypes.string,
   imageUrl: PropTypes.string,
   lowOnStock: PropTypes.string,
   name: PropTypes.string,
