@@ -64,6 +64,7 @@ function App() {
     });
 
     setProducts(updatedProducts);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedProducts]);
 
   return (
