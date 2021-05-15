@@ -10,6 +10,7 @@ import {
   nameText,
   priceText,
   priceWasText,
+  removeCheckbox,
 } from './product.module.css';
 
 // api response:
@@ -37,9 +38,24 @@ export default function Product(props) {
     productId,
     promotionBadge,
     quantity,
+    selected,
+    toggleSelectProduct,
   } = props;
+
+  function handleToggleChange(event) {
+    const removing = event.target.checked;
+
+    toggleSelectProduct(productId, removing);
+  }
+
   return (
     <article className={container}>
+      <input
+        type="checkbox"
+        selected={selected}
+        onChange={handleToggleChange}
+        className={removeCheckbox}
+      />
       <div className={header}>
         <img className={image} src={imageUrl} alt={name} />
         {promotionBadge && (
@@ -69,4 +85,6 @@ Product.propTypes = {
   productId: PropTypes.number,
   promotionBadge: PropTypes.string,
   quantity: PropTypes.number,
+  selected: PropTypes.bool,
+  toggleSelectProduct: PropTypes.func,
 };
