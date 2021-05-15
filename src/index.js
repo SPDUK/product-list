@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import reportWebVitals from './reportWebVitals';
 
 import './styles/normalize.css';
+import './styles/variables.css';
 
 ReactDOM.render(
   <React.StrictMode>

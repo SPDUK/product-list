@@ -1,6 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { container } from './product.module.css';
+import {
+  container,
+  image,
+  header,
+  footer,
+  promotionBanner,
+  prices,
+  nameText,
+  priceText,
+  priceWasText,
+} from './product.module.css';
 
 // api response:
 
@@ -29,9 +39,22 @@ export default function Product(props) {
     quantity,
   } = props;
   return (
-    <div className={container}>
-      <div>{name}</div>
-    </div>
+    <article className={container}>
+      <div className={header}>
+        <img className={image} src={imageUrl} alt={name} />
+        {promotionBadge && (
+          <div className={promotionBanner}>{promotionBadge}</div>
+        )}
+      </div>
+
+      <div className={footer}>
+        <div className={nameText}>{name}</div>
+        <div className={prices}>
+          <span className={priceText}>£{price}</span>
+          <span className={priceWasText}>{priceWas}</span>
+        </div>
+      </div>
+    </article>
   );
 }
 
