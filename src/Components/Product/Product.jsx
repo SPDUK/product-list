@@ -11,6 +11,10 @@ import {
   priceText,
   priceWasText,
   removeCheckbox,
+  inStocktext,
+  stockContainer,
+  lowOnStockText,
+  outOfStockText,
 } from './product.module.css';
 
 // api response:
@@ -42,10 +46,20 @@ export default function Product(props) {
     toggleSelectProduct,
   } = props;
 
+  const isAvailable = available === 'TRUE' && quantity >= 1;
+  const isLowStock = lowOnStock === 'TRUE';
+
   function handleToggleChange(event) {
     const removing = event.target.checked;
 
     toggleSelectProduct(productId, removing);
+  }
+
+  // display either out of stock or quantity in stock
+  function getStocktext() {
+    if (!isAvailable) return <div className={outOfStockText}>Out of Stock</div>;
+
+    return <div className={inStocktext}>{quantity} in stock</div>;
   }
 
   return (
@@ -69,6 +83,13 @@ export default function Product(props) {
           <span className={priceText}>£{price}</span>
           <span className={priceWasText}>{priceWas}</span>
         </div>
+        <span className={stockContainer}>
+          {getStocktext()}
+
+          {isLowStock && isAvailable && (
+            <div className={lowOnStockText}>Low on stock</div>
+          )}
+        </span>
       </div>
     </article>
   );

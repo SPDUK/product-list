@@ -41,7 +41,6 @@ function App() {
       setLoading(true);
 
       const { data } = await axios.get(productsUrl);
-      console.log(data);
 
       setProducts(data);
     } catch (err) {

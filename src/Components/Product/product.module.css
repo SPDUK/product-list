@@ -77,3 +77,28 @@
   top: 10px;
   left: 10px;
 }
+
+
+.stockContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.inStocktext {
+  color:var(--green);
+}
+
+.outOfStockText, .lowOnStockText {
+  text-transform: uppercase;
+}
+
+.outOfStockText {
+  color: var(--red);
+}
+
+
+.lowOnStockText {
+  color: var(--orange);
+}

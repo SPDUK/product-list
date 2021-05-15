@@ -1,5 +1,8 @@
+/* just guessing colors as can't use color picker on the pdf :( */
 :root {
   --red: rgb(255, 72, 72);
   --purple: rgb(138, 17, 236);
   --white: rgb(250, 250, 250);
-}
+  --green: rgb(64, 163, 7);
+  --orange: rgb(255, 207, 102);
+} 
